@@ -9,13 +9,13 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+// pricecalculator
+
 // MongoDB Connection (without .env)
-mongoose.connect("mongodb://localhost:27017/pricecalculator", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log("✅ MongoDB connected"))
-.catch((err) => console.error("❌ MongoDB connection error:", err));
+mongoose.connect('mongodb://localhost:27017/pricecalculator')
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
 
 // Routes
 const calculationRoutes = require("./routes/calculationRoutes");
